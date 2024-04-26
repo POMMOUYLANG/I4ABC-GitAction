@@ -11,12 +11,12 @@ jobs: # stage
   laravel-tests: # stage name // stage("laravel_tests")
 
     # window-latest & ubuntu-latest & mac-latest
-    runs-on: window-latest # In jenkins of name : agent (GitHub: runners)
+    runs-on: ubuntu-latest # In jenkins of name : agent (GitHub: runners)
 
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e # name of actions
       with:
-        php-version: '8.0' # php versions (php version 8.0 in ubuntu)
+        php-version: '8.2' # php versions (php version 8.0 in ubuntu)
     - uses: actions/checkout@v4 # checkout branch to main
     - name: Copy .env 
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
